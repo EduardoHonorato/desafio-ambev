@@ -414,10 +414,12 @@ npm run test
 
 ## 🐳 Docker
 
-O projeto utiliza Docker Compose para gerenciar todos os serviços. O hot reload está configurado por padrão:
+O projeto utiliza Docker Compose para gerenciar todos os serviços. O hot reload está configurado por padrão no arquivo `docker-compose.yml`:
 
 - **Backend**: Usa `dotnet watch` para recarregar automaticamente ao detectar mudanças
 - **Frontend**: Usa `vite dev server` para recarregar automaticamente ao detectar mudanças
+
+**Nota:** O projeto utiliza apenas um arquivo `docker-compose.yml` que já está configurado com hot reload ativo por padrão.
 
 ### Volumes
 
@@ -428,6 +430,7 @@ Os volumes estão configurados para:
 
 ### Arquivos Docker
 
+- `docker-compose.yml` - Orquestração de todos os serviços (com hot reload)
 - `backend/Dockerfile` - Imagem de produção do backend
 - `backend/Dockerfile.dev` - Imagem de desenvolvimento (hot reload)
 - `frontend/Dockerfile` - Imagem de produção do frontend
