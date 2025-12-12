@@ -489,7 +489,7 @@ Veja abaixo alguns screenshots de algumas telas.
 <img width="1920" height="975" alt="image" src="https://github.com/user-attachments/assets/b6a45e20-f088-48a9-91fd-088e8b387e5a" />
 
 ## DASHBOARD
-<img width="1920" height="1169" alt="image" src="https://github.com/user-attachments/assets/61973c4a-4550-48b0-a98a-8c355fc35bfa" />
+<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/61973c4a-4550-48b0-a98a-8c355fc35bfa" />
 
 ## LISTA DE COLABORADORES
 <img width="560" height="340" alt="image" src="https://github.com/user-attachments/assets/481ca734-500c-4abc-990b-ca46273789d2" />
