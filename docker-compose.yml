@@ -42,7 +42,8 @@ services:
     volumes:
       - ./backend:/src
       - ./backend/logs:/app/logs
-    command: dotnet watch run --project EmployeeManagement.API/EmployeeManagement.API.csproj --urls http://+:80
+    working_dir: /src/EmployeeManagement.API
+    command: dotnet watch run --urls http://+:80
 
   mailhog:
     image: mailhog/mailhog:latest
