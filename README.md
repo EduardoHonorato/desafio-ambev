@@ -63,7 +63,7 @@ Sistema completo de gestão de funcionários desenvolvido com .NET 8 (Clean Arch
 ### 1. Clone o repositório
 
 ```bash
-git clone <repository-url>
+git clone <[repository-url](https://github.com/EduardoHonorato/desafio-ambev.git)>
 cd desafio
 ```
 
