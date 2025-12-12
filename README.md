@@ -492,9 +492,6 @@ Veja abaixo alguns screenshots de algumas telas.
 <img width="1920" height="1169" alt="image" src="https://github.com/user-attachments/assets/61973c4a-4550-48b0-a98a-8c355fc35bfa" />
 
 ## LISTA DE COLABORADORES
-<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/481ca734-500c-4abc-990b-ca46273789d2" />
-
-## TELA DE CADASTRO VERSÃO MOBILE
-<img width="1410" height="2862" alt="localhost_3005_employees_create(iPhone 6_7_8 Plus)" src="https://github.com/user-attachments/assets/c0211cd1-e29a-4f86-a175-c92de9c1ade3" />
+<img width="560" height="340" alt="image" src="https://github.com/user-attachments/assets/481ca734-500c-4abc-990b-ca46273789d2" />
 
 
