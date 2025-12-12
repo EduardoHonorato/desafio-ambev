@@ -475,3 +475,26 @@ Os volumes estão configurados para:
 - ✅ **MailHog** para testes de email
 
 ---
+
+###ScreenShots
+Veja abaixo alguns screenshots de algumas telas.
+
+## LOGIN
+<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/8f28db02-5398-47b9-a9a9-0da1048df15f" />
+
+## 2FA CODE
+<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/ef77699b-1237-4198-b6f0-23b418a9b0b0" />
+
+## E-MAIL DE VERIFICAÇÃO
+<img width="1920" height="975" alt="image" src="https://github.com/user-attachments/assets/b6a45e20-f088-48a9-91fd-088e8b387e5a" />
+
+## DASHBOARD
+<img width="1920" height="1169" alt="image" src="https://github.com/user-attachments/assets/61973c4a-4550-48b0-a98a-8c355fc35bfa" />
+
+## LISTA DE COLABORADORES
+<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/481ca734-500c-4abc-990b-ca46273789d2" />
+
+## TELA DE CADASTRO VERSÃO MOBILE
+<img width="1410" height="2862" alt="localhost_3005_employees_create(iPhone 6_7_8 Plus)" src="https://github.com/user-attachments/assets/c0211cd1-e29a-4f86-a175-c92de9c1ade3" />
+
+
