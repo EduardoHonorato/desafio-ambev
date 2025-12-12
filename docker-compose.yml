@@ -1,0 +1,73 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: employee_management_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: EmployeeManagement
+    ports:
+      - "3007:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: employee_management_api
+    ports:
+      - "3006:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
+      - ConnectionStrings__DefaultConnection=Server=mysql;Database=EmployeeManagement;User=root;Password=root;Port=3306;
+      - Jwt__Key=+mWWpvfOz9pERLVSRmipmharsP/doIy5JpDugPOX9EK7VkN1bOOKOf9Ai5UvUQyC72hJsfu76xHVZhJoGS2lCA==
+      - Jwt__Issuer=EmployeeManagement
+      - Jwt__Audience=EmployeeManagement
+      - Jwt__ExpiryMinutes=60
+      - Smtp__Host=mailhog
+      - Smtp__Port=1025
+      - Smtp__FromEmail=noreply@ambev.com
+      - Smtp__FromName=Ambev
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mailhog:
+        condition: service_started
+    volumes:
+      - ./backend:/src
+      - ./backend/logs:/app/logs
+    command: dotnet watch run --project EmployeeManagement.API/EmployeeManagement.API.csproj --urls http://+:80
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: employee_management_mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+      args:
+        - VITE_API_URL=http://localhost:3006/api
+    container_name: employee_management_frontend
+    ports:
+      - "3005:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3006/api
+    depends_on:
+      - api
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0 --port 5173
+
+volumes:
+  mysql_data:

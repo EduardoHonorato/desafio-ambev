@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+WORKDIR /src
+EXPOSE 80
+EXPOSE 443
+
+RUN dotnet tool install --global dotnet-ef || true
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+COPY ["EmployeeManagement.API/EmployeeManagement.API.csproj", "EmployeeManagement.API/"]
+COPY ["EmployeeManagement.Application/EmployeeManagement.Application.csproj", "EmployeeManagement.Application/"]
+COPY ["EmployeeManagement.Domain/EmployeeManagement.Domain.csproj", "EmployeeManagement.Domain/"]
+COPY ["EmployeeManagement.Infrastructure/EmployeeManagement.Infrastructure.csproj", "EmployeeManagement.Infrastructure/"]
+RUN dotnet restore "EmployeeManagement.API/EmployeeManagement.API.csproj"
+
+COPY . .
+
+WORKDIR "/src/EmployeeManagement.API"
+
+CMD ["dotnet", "watch", "run", "--urls", "http://+:80"]
+
